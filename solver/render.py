@@ -42,7 +42,7 @@ def sample_piece(pose, slug, hand, n=24):
     return pts
 
 
-def render(seq_entries, title="Layout", out="track.svg"):
+def svg_string(seq_entries, title="Layout"):
     seq = [decode(e) for e in seq_entries]
     pose = (0.0, 0.0, 0.0)
     pieces = []
@@ -88,7 +88,11 @@ def render(seq_entries, title="Layout", out="track.svg"):
     fw, fd = (x1 - x0 - 120) / 1000, (y1 - y0 - 120) / 1000
     svg.append(f'<text x="12" y="{H + 34:.0f}" font-size="13" fill="#555">footprint ≈ {fw:.2f} × {fd:.2f} m — start/finish at red bar, pieces numbered in build order</text>')
     svg.append("</svg>")
-    open(out, "w").write("\n".join(svg))
+    return "\n".join(svg)
+
+
+def render(seq_entries, title="Layout", out="track.svg"):
+    open(out, "w").write(svg_string(seq_entries, title))
     return out
 
 

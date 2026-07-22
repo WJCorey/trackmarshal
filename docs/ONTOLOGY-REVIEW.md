@@ -82,10 +82,10 @@ may_not_create: [PieceType]       # new geometry = human-reviewed; new SKUs usua
 required_behavior: [idempotent deterministic names, propose status:discontinued never delete,
                     every geometric datum lands with a SpecClaim]
 
-agent: importer-skill             # inventory seeding + PieceUsage regeneration
+agent: importer-skill             # inventory seeding + PieceUsage regeneration (shipped as track-inventory)
 reads: [carrera-catalog, <racer>-track]
 writes_only: <racer>-track
-may_create: [Holding, Layout, PieceUsage, BuildLog, Room]
+may_create: [Holding, Layout, PieceUsage, BuildLog, Room, DesignBelief, Topic(sparingly — prefer the 3 seeded)]
 may_not_create: [PieceType, Product, ProductContent, SpecClaim]   # catalog gaps get reported, not patched locally
 required_behavior: [quantities in piece units, regenerate PieceUsage on every Layout write]
 

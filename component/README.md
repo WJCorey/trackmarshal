@@ -1,13 +1,13 @@
 # carrera-track-personal — installable WarmHub component
 
-The "build your own personal track repo" component (Greenhouse deliverable 3). Ships the 8 personal-repo shapes (Holding, Room, Layout, PieceUsage, BuildLog, LayoutFeedback, Topic, DesignBelief) + 3 seed Topics (flow, kid-friendly, overtaking). Package validates against the official schema (`wh component validate .` → Valid).
+The "build your own personal track repo" component (Greenhouse deliverable 3). Ships the 8 personal-repo shapes (Holding, Room, Layout, PieceUsage, BuildLog, LayoutFeedback, Topic, DesignBelief) + 3 seed Topics (flow, kid-friendly, overtaking).
 
-## Register (one-time, needs an authenticated `wh` session)
+**Registered and live: `slotcars/carrera-track-personal` (public, v0.1.0).** Lifecycle verified 2026-07-22 on a scratch repo: `wh component validate` → Valid, install → ready, doctor → all 13 checks ok (8 shapes, 3 seeds, install record, version), teardown → released all 8 shapes cleanly. Registry metadata points at this GitHub repo as source.
+
+Re-publishing a new version (additive-only — the component has consumers once anyone installs it):
 
 ```bash
-cd component
-wh login   # session expired 2026-07-17; registration blocked on this
-wh component register carrera-track-personal --org slotcars --manifest ./warmhub/manifest.json
+wh component registry update slotcars/carrera-track-personal --manifest ./component/warmhub/manifest.json
 ```
 
 ## How anyone then sets up their repo
