@@ -1,0 +1,47 @@
+{
+  "comment": "Master solver geometry data. Radii in mm, centerline. Two candidate radius models under adjudication (README D5): exact-nesting (fan CAD evidence) vs marketing-rounded. Straights in mm.",
+  "laneOffsetMm": 49.5,
+  "trackHalfWidthMm": 99.0,
+  "radiusModels": {
+    "exact-nesting": { "r1": 297.0, "r2": 495.0, "r3": 693.0, "r4": 891.0 },
+    "marketing-rounded": { "r1": 300.0, "r2": 500.0, "r3": 700.0, "r4": 900.0 }
+  },
+  "pieceTypes": {
+    "straight/full":      { "kind": "straight", "lengthMm": 345.0 },
+    "straight/third":     { "kind": "straight", "lengthMm": 115.0 },
+    "straight/quarter":   { "kind": "straight", "lengthMm": 86.25 },
+    "curve/r1-60":        { "kind": "curve", "radiusKey": "r1", "arcDeg": 60 },
+    "curve/r1-30":        { "kind": "curve", "radiusKey": "r1", "arcDeg": 30 },
+    "curve/r2-30":        { "kind": "curve", "radiusKey": "r2", "arcDeg": 30 },
+    "curve/r3-30":        { "kind": "curve", "radiusKey": "r3", "arcDeg": 30 },
+    "curve/r4-15":        { "kind": "curve", "radiusKey": "r4", "arcDeg": 15 }
+  },
+  "partToPieceType": {
+    "comment": "Official plan parts lists count individual pieces. Geometrically-equivalent mappings: connecting sections, chicanes, lane changes, digital power bases etc. all sit on standard-straight footprints.",
+    "20509": "straight/full",
+    "20515": "straight/full",
+    "20601": "straight/full",
+    "30341": "straight/full",
+    "30352": "straight/full",
+    "30344": "straight/full",
+    "30353": "straight/full",
+    "30355": "straight/full",
+    "30370": "straight/full",
+    "20516": "straight/full",
+    "20517": "straight/full",
+    "30343": "straight/full",
+    "30345": "straight/full",
+    "30347": "straight/full",
+    "20611": "straight/third",
+    "20612": "straight/quarter",
+    "20571": "curve/r1-60",
+    "20577": "curve/r1-30",
+    "20572": "curve/r2-30",
+    "20573": "curve/r3-30",
+    "20578": "curve/r4-15",
+    "30362": "curve/r1-60",
+    "30363": "curve/r1-60",
+    "30364": "curve/r1-60",
+    "30365": "curve/r1-60"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "carrera-track-personal",
+  "version": "0.1.0",
+  "description": "Personal Carrera 124/132 track repo: piece inventory composed on slotcars/carrera-catalog by cross-repo assertion, plus rooms, layouts with materialized piece usage, build logs, layout feedback, and design beliefs.",
+  "id": "com.slotcars.CarreraTrackPersonal"
+}

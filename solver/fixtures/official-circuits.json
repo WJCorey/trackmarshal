@@ -1,0 +1,59 @@
+{
+  "circuits": [
+    {
+      "name": "interlagos",
+      "sourceUrl": "https://sbcarreratoysmediahandlercdn.azureedge.net/5e502f15-aec1-4e2d-80b3-84bc21219eb4/2010-interlagos-en-03.pdf",
+      "dimensionsM": [5.10, 3.10],
+      "trackLengthM": 18.777,
+      "parts": {"20515": 1, "20509": 26, "20611": 3, "20612": 3, "20571": 17, "20577": 4, "20573": 8}
+    },
+    {
+      "name": "zeltweg",
+      "sourceUrl": "https://backend.carrera-toys.com/api/cms/download/333681",
+      "dimensionsM": [5.7, 5.3],
+      "trackLengthM": 18.618,
+      "parts": {"20515": 1, "20509": 37, "20611": 4, "20612": 3, "20571": 5, "20577": 2, "20572": 4, "20578": 8}
+    },
+    {
+      "name": "brands-hatch",
+      "sourceUrl": "https://backend.carrera-toys.com/api/cms/download/333685",
+      "dimensionsM": [4.5, 5.10],
+      "trackLengthM": 20.323,
+      "parts": {"20515": 1, "20509": 35, "20611": 1, "20612": 4, "20571": 7, "20577": 2, "20572": 13, "20573": 3, "20578": 2}
+    },
+    {
+      "name": "catalunya",
+      "sourceUrl": "https://backend.carrera-toys.com/api/cms/download/333687",
+      "dimensionsM": [5.30, 2.10],
+      "trackLengthM": 17.804,
+      "parts": {"20515": 1, "20509": 28, "20611": 1, "20612": 2, "20571": 21, "20577": 6}
+    },
+    {
+      "name": "monza",
+      "sourceUrl": "https://backend.carrera-toys.com/api/cms/download/355907",
+      "dimensionsM": null,
+      "trackLengthM": null,
+      "note": "Newer Digital 132 plan format ('Autodromo Nazionale di Monza'); PDF contains only the parts table with 8-digit article numbers, no assembled dimensions or track length printed. Counts are individual single tracks required. Includes digital lane-change parts and Control Unit.",
+      "parts": {"20020509": 21, "20020611": 2, "20020612": 5, "20030352": 1, "20030347": 1, "20030343": 1, "20030365": 1, "20020571": 3, "20020577": 10, "20020572": 6, "20020573": 3}
+    },
+    {
+      "name": "suzuka",
+      "sourceUrl": "https://backend.carrera-toys.com/api/cms/download/365969",
+      "dimensionsM": null,
+      "trackLengthM": null,
+      "note": "Newer Digital 132 plan format ('Suzuka International Racing Course'); PDF contains only the parts table with 8-digit article numbers, no assembled dimensions or track length printed. Counts are individual single tracks required. Includes Control Unit.",
+      "parts": {"20020509": 32, "20020611": 2, "20020612": 2, "20030352": 1, "20020571": 11, "20020577": 15, "20020572": 11, "20020578": 2}
+    }
+  ],
+  "skipped": [],
+  "meta": {
+    "collectedAt": "2026-07-16",
+    "indexPage": "https://carrera-toys.com/en/pages/landing-page-route-planner",
+    "notes": [
+      "Older 'Circuits to Download' PDFs (Zeltweg, Brands Hatch, Catalunya, Interlagos) use 5-digit Exclusiv/Evolution item numbers and state dimensions + track length with European decimal commas (converted to dots here).",
+      "Brands Hatch PDF is the German-language 'Streckenvorschlag' variant (Groesse 4,5 x 5,10m; Streckenlaenge ca. 20,323m).",
+      "Part descriptions like 'Standard straights 4 pieces' refer to retail pack size; the Track Parts counts recorded here are individual pieces as printed in the PDFs.",
+      "Additional plans available at the index page but not captured: Carrera 2015 World Final (333682), 2014 Nuremberg Trade Fair (333683), Challenge Tour 2012 (333684), Bugatti Le Mans (333686), Magny-Cours (333689), Zandvoort (660963)."
+    ]
+  }
+}

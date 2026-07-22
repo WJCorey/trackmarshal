@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corey's Carrera D132 — four showcase track designs</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1119; --bg-grid:rgba(120,150,190,.05); --surface:#101a29; --surface2:#0d1420;
+  --border:rgba(148,175,210,.14); --text:#dce6f2; --dim:#8ea2bb; --faint:#5d7089;
+  --r1:#e0641f; --banked:#d4a73a; --teal:#2f9db8; --green:#57a45b; --deck:#e5decb;
+  --hero-tint:rgba(224,100,31,.07);
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f2efe7; --bg-grid:rgba(30,58,95,.06); --surface:#faf8f2; --surface2:#0d1420;
+    --border:rgba(30,58,95,.18); --text:#1c2733; --dim:#51617a; --faint:#7c8ba0;
+    --hero-tint:rgba(224,100,31,.06);
+  }
+}
+*{box-sizing:border-box;min-width:0}
+body{
+  margin:0; font-family:'IBM Plex Sans',system-ui,sans-serif; background:var(--bg); color:var(--text);
+  background-image:linear-gradient(var(--bg-grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--bg-grid) 1px,transparent 1px);
+  background-size:36px 36px; line-height:1.55;
+}
+.wrap{max-width:1140px;margin:0 auto;padding:34px 26px 80px}
+.mono{font-family:'IBM Plex Mono',monospace}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--dim);
+  text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--acc)}
+h1{font-size:44px;line-height:1.08;margin:10px 0 6px;letter-spacing:-.015em}
+.tagline{font-size:18px;color:var(--dim);max-width:760px;margin:0 0 8px}
+h2{font-size:15px;font-family:'IBM Plex Mono',monospace;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 16px;display:flex;align-items:center;gap:9px}
+h2::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--acc)}
+section{margin-top:44px}
+.hero{background:linear-gradient(180deg,var(--hero-tint),transparent 80%);border:1px solid var(--border);
+  border-radius:14px;padding:30px 30px 24px;margin-top:22px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.kpi .v{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--acc)}
+.kpi .v small{font-size:14px;color:var(--dim);font-weight:400}
+.kpi .k{font-size:12px;color:var(--dim);margin-top:3px;letter-spacing:.05em}
+.kpi.big .v{font-size:34px}
+.map-panel{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:14px;
+  box-shadow:0 18px 40px -22px rgba(0,0,0,.7)}
+.map-panel svg{width:100%;height:auto;display:block;border-radius:8px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:12px;padding:0 4px}
+.chip{display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--dim)}
+.chip i{width:18px;height:8px;border-radius:2px;display:inline-block}
+.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+@media(max-width:880px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px}
+.card h3{margin:0 0 8px;font-size:16px}
+.card p{margin:8px 0;color:var(--dim);font-size:14.5px}
+.card p strong{color:var(--text)}
+.callout{border-left:3px solid var(--acc);background:var(--surface);border-radius:0 10px 10px 0;
+  padding:13px 16px;margin:14px 0;font-size:14px;color:var(--dim)}
+.callout strong{color:var(--text)}
+.callout code{color:var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{position:sticky;top:0;background:var(--surface);text-align:left;font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
+  padding:10px 12px;border-bottom:1px solid var(--border);z-index:2}
+tbody td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+tbody tr:nth-child(even){background:rgba(128,155,195,.045)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:'IBM Plex Mono',monospace}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.sector-row td{background:rgba(128,155,195,.09)!important;font-family:'IBM Plex Mono',monospace;
+  font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:8px;vertical-align:1px}
+.ok{color:var(--green)} .warn{color:var(--banked)}
+code{font-family:'IBM Plex Mono',monospace;font-size:.92em;background:rgba(128,155,195,.12);
+  padding:1px 5px;border-radius:4px}
+.navbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.navbar a{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);text-decoration:none;
+  border:1px solid var(--border);border-radius:999px;padding:5px 13px;background:var(--surface)}
+.navbar a:hover{color:var(--text);border-color:var(--acc)}
+.navbar a.here{color:var(--acc);border-color:var(--acc)}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--border);
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)}
+footer a{color:var(--dim)}
+.profile-panel{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:10px}
+.profile-panel svg{width:100%;height:auto;display:block}
+.fade{opacity:0;transform:translateY(14px);animation:fadeUp .6s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.fade{animation:none;opacity:1;transform:none}}
+.cards-idx{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.tcard{display:block;text-decoration:none;color:var(--text);background:var(--surface);
+  border:1px solid var(--border);border-radius:14px;padding:20px;transition:border-color .2s, transform .2s}
+.tcard:hover{border-color:var(--tacc);transform:translateY(-2px)}
+.tcard .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tacc)}
+.tcard h3{margin:6px 0 4px;font-size:20px}
+.tcard p{margin:4px 0 10px;font-size:13.5px;color:var(--dim)}
+.tcard .m{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim)}
+
+:root{--acc:#2f9db8}
+</style></head><body><div class="wrap">
+<nav class="navbar"><a href="index.html" class="here">Overview</a><a href="marathon-hex.html" class="">01 Longest</a><a href="gauntlet.html" class="">02 Technical</a><a href="skybridge.html" class="">03 Coolest</a><a href="equalizer.html" class="">04 Fairest</a></nav>
+<header class="hero fade">
+  <div class="eyebrow">Carrera Digital 132 · designed 2026-07-17 from live WarmHub inventory</div>
+  <h1>Four tracks, one box of pieces</h1>
+  <p class="tagline">Every layout below is solver-verified to close exactly, uses only
+  pieces in your <a href="https://app.warmhub.ai/orgs/wjcorey/repos/carrera-track"
+  style="color:var(--acc)">wjcorey/carrera-track</a> inventory, and comes with a full
+  assembly sheet. Build one at a time — they all share the same collection.</p>
+</header>
+<section class="fade" style="animation-delay:.1s">
+  <h2>The lineup</h2>
+  <div class="cards-idx">
+<a class="tcard" href="marathon-hex.html" style="--tacc:#e0641f">
+  <div class="lbl">Track 01</div><h3>Marathon Hex GP</h3><p>The Longest — 6 corners, 3 banked apexes, a flying hump, every piece you own</p>
+  <div class="m">16.01 m &middot; 5.9&times;3.8 m &middot; 47 pieces
+  &middot; &Delta;lanes 622 mm</div>
+</a>
+<a class="tcard" href="gauntlet.html" style="--tacc:#c2410c">
+  <div class="lbl">Track 02</div><h3>The Gauntlet</h3><p>The Most Technical — double hairpins + a 99 mm canyon corridor</p>
+  <div class="m">6.96 m &middot; 3.2&times;1.1 m &middot; 22 pieces
+  &middot; &Delta;lanes 622 mm</div>
+</a>
+<a class="tcard" href="skybridge.html" style="--tacc:#d4a73a">
+  <div class="lbl">Track 03</div><h3>Skybridge Thunder</h3><p>The Coolest — banked speedway sweeps over a flying crossover</p>
+  <div class="m">11.88 m &middot; 3.7&times;3.2 m &middot; 33 pieces
+  &middot; &Delta;lanes 0 mm</div>
+</a>
+<a class="tcard" href="equalizer.html" style="--tacc:#57a45b">
+  <div class="lbl">Track 04</div><h3>The Equalizer</h3><p>The Fairest — net-zero turning, both lanes mathematically identical</p>
+  <div class="m">11.88 m &middot; 3.7&times;3.2 m &middot; 33 pieces
+  &middot; &Delta;lanes 0 mm</div>
+</a></div>
+</section>
+<section class="fade" style="animation-delay:.2s">
+  <h2>Side by side</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>Track</th><th class="num">Lap</th>
+  <th class="num">Footprint</th><th class="num">Pieces</th><th class="num">Corners</th>
+  <th class="num">Lane &Delta;</th></tr></thead><tbody><tr><td><a href='marathon-hex.html' style='color:var(--text)'>Marathon Hex GP</a></td><td class='num'>16.01 m</td><td class='num'>5.94 &times; 3.75 m</td><td class='num'>47</td><td class='num'>14</td><td class='num'>622 mm</td></tr><tr><td><a href='gauntlet.html' style='color:var(--text)'>The Gauntlet</a></td><td class='num'>6.96 m</td><td class='num'>3.23 &times; 1.09 m</td><td class='num'>22</td><td class='num'>6</td><td class='num'>622 mm</td></tr><tr><td><a href='skybridge.html' style='color:var(--text)'>Skybridge Thunder</a></td><td class='num'>11.88 m</td><td class='num'>3.72 &times; 3.18 m</td><td class='num'>33</td><td class='num'>10</td><td class='num'>0 — equal</td></tr><tr><td><a href='equalizer.html' style='color:var(--text)'>The Equalizer</a></td><td class='num'>11.88 m</td><td class='num'>3.72 &times; 3.18 m</td><td class='num'>33</td><td class='num'>10</td><td class='num'>0 — equal</td></tr></tbody></table></div>
+  <div class="callout"><strong>Lane &Delta; explained.</strong> On a normal loop the outer
+  slot is 622 mm longer per lap (2π &times; 99 mm slot spacing). Only a track that crosses
+  itself can be perfectly fair — that's The Equalizer's whole reason to exist.</div>
+</section>
+<section class="fade" style="animation-delay:.3s">
+  <h2>Shared build notes</h2>
+  <div class="grid2">
+  <div class="card"><h3>Power &amp; digital</h3>
+  <p>The Control Unit is placed in every layout (green piece, start/finish). The
+  Wireless+ charging straight appears where there's a low-speed zone. Lane-change pieces
+  are positioned to give at least two passing opportunities per lap.</p></div>
+  <div class="card"><h3>What stays in the box</h3>
+  <p>Pit-lane turnouts, the pit adapter and the two single-lane straights aren't
+  solver-verified yet (catalog <code>solverReady:false</code>) — add the pit lane as an
+  off-circuit spur next to any start/finish straight if you want pit stops. Border
+  end-pieces: put them on hairpin and banked-curve exits.</p></div>
+  </div>
+</section>
+<footer>
+  Inventory: <a href="https://app.warmhub.ai/orgs/wjcorey/repos/carrera-track">wjcorey/carrera-track</a>
+  &middot; piece geometry: <a href="https://app.warmhub.ai/orgs/slotcars">slotcars/carrera-catalog</a>
+  &middot; closure solver: carrera-track-warmhub/designs/design_tracks.py
+</footer>
+</div></body></html>

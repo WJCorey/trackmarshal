@@ -1,0 +1,272 @@
+{
+  "$schema": "https://docs.warmhub.ai/schema/component-manifest.v1.json",
+  "component": {
+    "id": "com.slotcars.CarreraTrackPersonal",
+    "name": "carrera-track-personal",
+    "version": "0.1.0"
+  },
+  "shapes": [
+    {
+      "name": "Holding",
+      "description": "This racer's inventory of one PieceType, in individual piece units (never packs). about = the catalog PieceType (canonical cross-repo wref into slotcars/carrera-catalog, e.g. wh:slotcars/carrera-catalog/PieceType/straight/full). One Holding per piece type; quantity changes are revisions (append-only history shows the collection growing).",
+      "fields": {
+        "quantity": {
+          "type": "number",
+          "description": "Pieces owned"
+        },
+        "condition": {
+          "type": "string?",
+          "description": "Free text: new / worn / broken tabs etc."
+        },
+        "acquiredNotes": {
+          "type": "string?",
+          "description": "Provenance: which products/sets these pieces came from"
+        },
+        "pieceTypeSlug": {
+          "type": "string",
+          "description": "Denormalized catalog piece type path, e.g. straight/full"
+        },
+        "pieceTitle": {
+          "type": "string",
+          "description": "Denormalized piece title"
+        }
+      }
+    },
+    {
+      "name": "Room",
+      "description": "A physical space layouts must fit. One truth per room; revise as furniture moves.",
+      "fields": {
+        "title": {
+          "type": "string",
+          "description": "e.g. Basement"
+        },
+        "widthMm": {
+          "type": "number",
+          "description": "Usable width"
+        },
+        "lengthMm": {
+          "type": "number",
+          "description": "Usable length"
+        },
+        "obstacles": {
+          "type": "array?",
+          "items": {
+            "type": "string"
+          },
+          "description": "Rectangles the track must avoid, encoded 'xMm,yMm,widthMm,lengthMm,label' (origin at room corner)"
+        },
+        "notes": {
+          "type": "string?",
+          "description": "Access, floor surface, storage constraints"
+        }
+      }
+    },
+    {
+      "name": "Layout",
+      "description": "A designed or built track. The ordered piece sequence is canonical data here (one artifact, versioned); per-piece traversal lives in PieceUsage assertions, regenerated deterministically from sequence on every revise \u2014 stale PieceUsage is a bug.",
+      "fields": {
+        "title": {
+          "type": "string",
+          "description": "Layout name"
+        },
+        "description": {
+          "type": "string?",
+          "description": "Design intent, who it is for"
+        },
+        "sequence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Ordered pieces encoded '<pieceTypeSlug>[:L|R]' \u2014 hand L/R for curves, omitted for straights; e.g. 'curve/r1-60:L', 'straight/full'. Closure-checked by the solver before save"
+        },
+        "laneLengthsMm": {
+          "type": "array?",
+          "items": {
+            "type": "number"
+          },
+          "description": "Per-slot lengths computed by the solver"
+        },
+        "footprintWidthMm": {
+          "type": "number?",
+          "description": "Bounding box incl. 99 mm half-width each side"
+        },
+        "footprintLengthMm": {
+          "type": "number?",
+          "description": "Bounding box"
+        },
+        "roomWref": {
+          "type": "string?",
+          "description": "Room this was designed for (local wref)"
+        },
+        "closureVerified": {
+          "type": "boolean",
+          "description": "Solver closure result at save time"
+        },
+        "status": {
+          "type": "string",
+          "description": "designed | built | retired \u2014 in data, never in the name"
+        }
+      }
+    },
+    {
+      "name": "PieceUsage",
+      "description": "Materialized bill of materials: how many of each PieceType a Layout consumes. about = Pair (Layout first, catalog PieceType second, canonical wref). Deterministically regenerated from Layout.sequence on every revise \u2014 never hand-edited. Query from either endpoint needs resolveCollections:true.",
+      "fields": {
+        "quantity": {
+          "type": "number",
+          "description": "Pieces of this type the layout uses"
+        },
+        "layoutSlug": {
+          "type": "string",
+          "description": "Denormalized layout name"
+        },
+        "pieceTypeSlug": {
+          "type": "string",
+          "description": "Denormalized catalog piece type path"
+        }
+      }
+    },
+    {
+      "name": "BuildLog",
+      "description": "Evidence that a design met reality: one entry per physical build/race session, authored by the repo owner. about = the Layout. This is the stream that keeps DesignBeliefs honest. For other people's takes, use LayoutFeedback.",
+      "fields": {
+        "builtOn": {
+          "type": "string",
+          "description": "ISO-8601 date of the build"
+        },
+        "whoRaced": {
+          "type": "string?",
+          "description": "Who raced"
+        },
+        "funRating": {
+          "type": "number?",
+          "description": "1-10 subjective verdict"
+        },
+        "issues": {
+          "type": "string?",
+          "description": "Closure failed IRL, piece shortage, car flies off at curve 4, ..."
+        },
+        "photos": {
+          "type": "array?",
+          "items": {
+            "type": "string"
+          },
+          "description": "Links only \u2014 the graph never owns image bytes"
+        }
+      }
+    },
+    {
+      "name": "LayoutFeedback",
+      "description": "Someone's take on a Layout \u2014 distinct from BuildLog (the owner's own build evidence). about = the Layout. Works two ways: repo members add it here directly; anyone else asserts the same shape FROM THEIR OWN repo about this repo's Layout by canonical wref \u2014 cross-repo assertions surface on the layout's about-query either way. Author identity also lives in commit metadata; authorName is the readable denormalization.",
+      "fields": {
+        "comment": {
+          "type": "string",
+          "description": "The feedback itself"
+        },
+        "rating": {
+          "type": "number?",
+          "description": "1-10 overall, optional"
+        },
+        "raceTested": {
+          "type": "boolean",
+          "description": "true = author physically built/raced this layout; false = armchair review of the plan"
+        },
+        "authorName": {
+          "type": "string",
+          "description": "Who is giving feedback (readable name/handle)"
+        },
+        "layoutSlug": {
+          "type": "string",
+          "description": "Denormalized layout name for context-free readability"
+        }
+      }
+    },
+    {
+      "name": "Topic",
+      "description": "Description-only anchor for design beliefs (flow, kid-friendly, overtaking, ...). Create sparingly; reuse existing topics.",
+      "fields": {
+        "title": {
+          "type": "string",
+          "description": "Topic name"
+        },
+        "note": {
+          "type": "string?",
+          "description": "What this topic covers"
+        }
+      }
+    },
+    {
+      "name": "DesignBelief",
+      "description": "What this racer believes makes a good track, as a soft constraint for the designer skill. about = a Topic. Attributed, revisable; strength is the author's current subjective weight (single-author repo \u2014 no aggregation semantics). If beliefs ever get crowdsourced, promote to binomial propositions with certainty opinions.",
+      "fields": {
+        "statement": {
+          "type": "string",
+          "description": "The belief, stated plainly"
+        },
+        "strength": {
+          "type": "number",
+          "description": "0-1 subjective weight the solver applies as a soft objective"
+        },
+        "evidenceLayoutWrefs": {
+          "type": "array?",
+          "items": {
+            "type": "string"
+          },
+          "description": "Layouts whose BuildLogs support or contradict this belief"
+        }
+      }
+    }
+  ],
+  "credentials": [],
+  "subscriptions": [],
+  "seeds": [
+    {
+      "kind": "thing",
+      "name": "flow",
+      "data": {
+        "title": "Flow",
+        "note": "Rhythm of the racing line: sweepers vs stop-and-go"
+      },
+      "shape": "Topic"
+    },
+    {
+      "kind": "thing",
+      "name": "kid-friendly",
+      "data": {
+        "title": "Kid-friendly",
+        "note": "Forgiving layouts for young or new racers: fewer deslots, wide shoulders"
+      },
+      "shape": "Topic"
+    },
+    {
+      "kind": "thing",
+      "name": "overtaking",
+      "data": {
+        "title": "Overtaking",
+        "note": "Passing opportunities: lane-change placement, straight length before corners (digital)"
+      },
+      "shape": "Topic"
+    }
+  ],
+  "health": {
+    "requires": {
+      "shapes": [
+        "Holding",
+        "Room",
+        "Layout",
+        "PieceUsage",
+        "BuildLog",
+        "LayoutFeedback",
+        "Topic",
+        "DesignBelief"
+      ],
+      "things": [
+        "Topic/flow",
+        "Topic/kid-friendly",
+        "Topic/overtaking"
+      ]
+    }
+  },
+  "teardown": {}
+}
