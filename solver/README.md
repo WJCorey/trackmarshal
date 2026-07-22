@@ -4,6 +4,9 @@
 - `geometry.py` — SE(2) transform composition, closure check, centerline/lane lengths, footprint, angle-feasibility DP, randomized closure search.
 - `oracle.py` — run `python3 oracle.py`: circle identities, official-plan length comparison, least-squares radius fit, closure search.
 - `fixtures/official-circuits.json` — 6 official Carrera circuit plans (piece lists + published dims/lengths) extracted from carrera-toys.com PDFs.
+- `designer.py` — inventory-constrained closed-layout generation (curve-subset angle enumeration + closure search + room filter + length/fairness ranking).
+- `render.py` — layout sequence → exact-geometry SVG (track surface, dashed slot lanes, numbered pieces, start/finish bar); `svg_string()` for embedding.
+- `buildsheet.py` — proposal → self-contained printable HTML build sheet (SVG drawing, stats, parts list, run-compressed assembly steps, optional shopping/notes sections). Re-verifies closure at render time and prints the honest verdict.
 
 ## Adjudication result (2026-07-16)
 

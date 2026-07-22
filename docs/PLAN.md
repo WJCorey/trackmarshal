@@ -32,7 +32,7 @@ Original spec:
 
 ## Phase 2 — personal-repo component + importer skill — PARTIALLY DONE 2026-07-16
 
-Done: `wjcorey/carrera-track` (public, the worked example) with all 8 shapes (LayoutFeedback added 2026-07-17 — others' takes on layouts, in-repo or cross-repo); Corey's real inventory seeded — 20 Holdings in piece units from 30044, 30356, 30367, 20576, 20587, 20611, 20612, 10109 (incl. the Wireless+ charging straight; end-piece count owner-adjudicated to 4). Solver confirms the inventory closes an ~11.4 m layout in 3.7 × 4.1 m. Component packaged and schema-valid in `component/` (id com.slotcars.CarreraTrackPersonal): 8 shapes + 3 seed Topics; **registration blocked on `wh login`** — then `wh component register carrera-track-personal --org slotcars --manifest ./warmhub/manifest.json`. Remaining: register component; conversational importer skill (manual expansion worked as the spec).
+Done: `wjcorey/carrera-track` (public, the worked example) with all 8 shapes (LayoutFeedback added 2026-07-17 — others' takes on layouts, in-repo or cross-repo); Corey's real inventory seeded — 20 Holdings in piece units from 30044, 30356, 30367, 20576, 20587, 20611, 20612, 10109 (incl. the Wireless+ charging straight; end-piece count owner-adjudicated to 4). Solver confirms the inventory closes an ~11.4 m layout in 3.7 × 4.1 m. Component packaged in `component/` (id com.slotcars.CarreraTrackPersonal): 8 shapes + 3 seed Topics; **registered 2026-07-22 as public `slotcars/carrera-track-personal` v0.1.0**, full lifecycle verified on a scratch repo (install → doctor all-ok → teardown clean). Importer shipped 2026-07-22 as `.claude/skills/track-inventory/` (repo setup via the registered component, product/alias resolution, ProductContent expansion, piece-unit Holdings with provenance, Room + DesignBelief interview, catalog-verifier reporting flow; all quoted CLI commands smoke-tested live). **Phase 2 complete.**
 
 Original spec:
 
@@ -40,7 +40,11 @@ Original spec:
 - **Importer skill:** conversational inventory seeding — "I have set 20025240, plus 6 extra R2 curves and a pit lane" → `Holding`s (piece units) via `ProductContent` expansion. Owns `PieceUsage` regeneration on layout writes. Write contracts per ONTOLOGY-REVIEW.md.
 - Dogfood: Corey's real inventory becomes the first personal repo (public, as the worked example — decide OQ-3).
 
-## Phase 3 — track-designer skill — v1 SHIPPED 2026-07-17
+## Phase 3 — track-designer skill — v2 SHIPPED 2026-07-22
+
+v2 adds: design-time preference conversation (durable answers persist as DesignBeliefs; session-only ones don't), self-contained HTML build sheets (`solver/buildsheet.py` — exact-geometry SVG, stats, parts list, run-compressed assembly steps, optional shopping-delta section, closure re-verified at render time with the verdict printed honestly), and post-save build-sheet regeneration with the WarmHub Layout link. Verified end-to-end on the real inventory (11.7 m proposal → `designs/whittaker-speedway-v2-buildsheet.html`); negative path (non-closing sequence → NOT VERIFIED warning) tested. Still open from v1 gaps: fractional-straight utilization, lane-change placement optimization, banked/pit attachment (OQ-5).
+
+### v1 (2026-07-17)
 
 `solver/designer.py` (inventory-constrained closed-layout generation: curve-subset angle enumeration + closure search + room filter + length/lane-fairness ranking) + project skill `.claude/skills/track-designer/SKILL.md` (reads Holdings/Room/DesignBeliefs via MCP, runs designer, writes Layout + PieceUsage back, honesty rules). First run on Corey's real inventory: 11.7 m centerline in 4.8 × 2.6 m using 10/11 curves + all straight-equivalents. v1 gaps → v2: fractional-straight utilization (search rarely closes with them), lane-change placement optimization, belief-aware scoring in the solver itself, banked/pit attachment. Original spec:
 
@@ -67,9 +71,9 @@ Original spec:
 
 ## User actions (Corey)
 
-1. **Create the `slotcars` org** — MCP has no org-create and the local `wh` CLI session is expired. Either `wh login` then create the org, or use the WarmHub web app. Everything else (repos, shapes, data load) is scripted and waiting on this.
+1. ~~Create the `slotcars` org~~ — done 2026-07-16 (https://app.warmhub.ai/orgs/slotcars).
 2. Post the idea in **#project-greenhouse** to claim it (Slack MCP isn't authorized in this session, so this one's manual).
-3. Later: list your sets + loose pieces — the importer expands sets into piece units.
+3. ~~List sets + loose pieces~~ — done 2026-07-17; inventory is live in `wjcorey/carrera-track`.
 
 ## Decision log
 
