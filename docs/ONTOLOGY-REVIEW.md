@@ -72,6 +72,8 @@ Ten-question naming review: convention inferable from examples ✓ · nearby Thi
 
 ## Agent write contracts
 
+Car-layer additions (car-catalog-pipeline, garage-skill) live in CARS-DESIGN.md § Write contracts.
+
 ```yaml
 agent: catalog-pipeline           # monthly new-product/discontinuation watcher
 subscribes_to: []                 # cron, not event-driven

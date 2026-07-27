@@ -8,7 +8,7 @@ The track-planning apps died (Carrera's official planner is discontinued; TrackP
 
 | Layer | Where | What |
 |---|---|---|
-| **Public catalog** | [`slotcars/carrera-catalog`](https://app.warmhub.ai/orgs/slotcars) on WarmHub | Every piece type with adjudicated geometry (centerline radii 297/495/693/891 mm — verified against Carrera's own published circuit plans), every retail product with box contents, and per-datum source provenance (`SpecClaim`s — conflicting sources preserved, not averaged) |
+| **Public catalog** | [`slotcars/carrera-catalog`](https://app.warmhub.ai/orgs/slotcars) on WarmHub | Every piece type with adjudicated geometry (centerline radii 297/495/693/891 mm — verified against Carrera's own published circuit plans), cars and spare/upgrade parts with tire-fitment claims (third-party tires first-class, vendor conflicts preserved), every retail product with box contents, and per-datum source provenance (`SpecClaim`s — conflicting sources preserved, not averaged) |
 | **Your repo** | one per racer, e.g. [`wjcorey/carrera-track`](https://app.warmhub.ai/orgs/wjcorey) | Inventory (`Holding`s asserted *about* catalog pieces — composed, never copied), rooms, saved layouts with bill-of-materials, build logs, feedback, design beliefs |
 | **Component** | `slotcars/carrera-track-personal` | Installs the personal-repo shapes + seed topics in one command ([component/](component/)) |
 | **Solver** | [solver/](solver/) | SE(2) closure math, inventory-constrained layout generation, exact-geometry SVG rendering, printable HTML build sheets — pure-stdlib Python |
@@ -39,7 +39,7 @@ Or point an MCP-connected agent at the catalog and this repo's skills — that's
 
 ## Status
 
-Live: catalog, personal-repo component (registered: `slotcars/carrera-track-personal`), `track-inventory` + `track-designer` v2 skills with HTML build sheets, worked-example repo with a real inventory. In progress: update pipeline, blog post. Roadmap and open questions: [docs/PLAN.md](docs/PLAN.md). Design rationale: [docs/DESIGN.md](docs/DESIGN.md) and [docs/ONTOLOGY-REVIEW.md](docs/ONTOLOGY-REVIEW.md).
+Live: catalog (pieces + the car/parts/fitment layer, [docs/CARS-DESIGN.md](docs/CARS-DESIGN.md)), personal-repo component v0.2.0 (`slotcars/carrera-track-personal` — inventory, garage, lap records), `track-inventory` + `track-designer` v2 skills with HTML build sheets, worked-example repo with a real inventory and garage. In progress: update pipeline (now urgent — car liveries churn yearly), blog post. Roadmap and open questions: [docs/PLAN.md](docs/PLAN.md). Design rationale: [docs/DESIGN.md](docs/DESIGN.md) and [docs/ONTOLOGY-REVIEW.md](docs/ONTOLOGY-REVIEW.md).
 
 ## Licensing
 

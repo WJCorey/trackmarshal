@@ -1,0 +1,402 @@
+[
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "32001--d132-ferrari-296-gt3",
+  "members": [
+   "Product/32001",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/32001/d132-ferrari-296-gt3",
+  "about": "Pair/32001--d132-ferrari-296-gt3",
+  "data": {
+   "quantity": 1,
+   "partNumber": "32001",
+   "verified": true,
+   "contentKind": "carModel",
+   "contentSlug": "d132/ferrari-296-gt3",
+   "contentTitle": "Ferrari 296 GT3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "32022--d132-aston-martin-vantage-gt3",
+  "members": [
+   "Product/32022",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/32022/d132-aston-martin-vantage-gt3",
+  "about": "Pair/32022--d132-aston-martin-vantage-gt3",
+  "data": {
+   "quantity": 1,
+   "partNumber": "32022",
+   "verified": true,
+   "contentKind": "carModel",
+   "contentSlug": "d132/aston-martin-vantage-gt3",
+   "contentTitle": "Aston Martin Vantage GT3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "20365--brush-double-2007",
+  "members": [
+   "Product/20365",
+   "PartType/brush/double-2007"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/20365/brush-double-2007",
+  "about": "Pair/20365--brush-double-2007",
+  "data": {
+   "quantity": 10,
+   "partNumber": "20365",
+   "verified": true,
+   "contentKind": "partType",
+   "contentSlug": "brush/double-2007",
+   "contentTitle": "Double brush (sliding contact), 2007-generation"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "20366--guide-keel-2007",
+  "members": [
+   "Product/20366",
+   "PartType/guide/keel-2007"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/20366/guide-keel-2007",
+  "about": "Pair/20366--guide-keel-2007",
+  "data": {
+   "quantity": 2,
+   "partNumber": "20366",
+   "verified": true,
+   "contentKind": "partType",
+   "contentSlug": "guide/keel-2007",
+   "contentTitle": "Guide keel, 2007-generation"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "20366--brush-double-2007",
+  "members": [
+   "Product/20366",
+   "PartType/brush/double-2007"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/20366/brush-double-2007",
+  "about": "Pair/20366--brush-double-2007",
+  "data": {
+   "quantity": 8,
+   "partNumber": "20366",
+   "verified": true,
+   "contentKind": "partType",
+   "contentSlug": "brush/double-2007",
+   "contentTitle": "Double brush (sliding contact), 2007-generation"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "26732--decoder-d132-26732",
+  "members": [
+   "Product/26732",
+   "PartType/decoder/d132-26732"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/26732/decoder-d132-26732",
+  "about": "Pair/26732--decoder-d132-26732",
+  "data": {
+   "quantity": 1,
+   "partNumber": "26732",
+   "verified": true,
+   "contentKind": "partType",
+   "contentSlug": "decoder/d132-26732",
+   "contentTitle": "Digital 132 decoder (26732)"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "30044--d132-ferrari-296-gt3",
+  "members": [
+   "Product/30044",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/30044/d132-ferrari-296-gt3",
+  "about": "Pair/30044--d132-ferrari-296-gt3",
+  "data": {
+   "quantity": 1,
+   "partNumber": "30044",
+   "verified": true,
+   "contentKind": "carModel",
+   "contentSlug": "d132/ferrari-296-gt3",
+   "contentTitle": "Ferrari 296 GT3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "30044--d132-aston-martin-vantage-gt3",
+  "members": [
+   "Product/30044",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "ProductContent/30044/d132-aston-martin-vantage-gt3",
+  "about": "Pair/30044--d132-aston-martin-vantage-gt3",
+  "data": {
+   "quantity": 1,
+   "partNumber": "30044",
+   "verified": true,
+   "contentKind": "carModel",
+   "contentSlug": "d132/aston-martin-vantage-gt3",
+   "contentTitle": "Aston Martin Vantage GT3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "brush-double-2007--d132-ferrari-296-gt3",
+  "members": [
+   "PartType/brush/double-2007",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/brush-double-2007/d132-ferrari-296-gt3",
+  "about": "Pair/brush-double-2007--d132-ferrari-296-gt3",
+  "data": {
+   "position": "n/a",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "brush/double-2007",
+   "carModelSlug": "d132/ferrari-296-gt3",
+   "partTitle": "Double brush (sliding contact), 2007-generation",
+   "carTitle": "Ferrari 296 GT3",
+   "notes": "Listed on the official 32001 spare-parts tab (carrera-toys.com, 2026-07-27)."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "brush-double-2007--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/brush/double-2007",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/brush-double-2007/d132-aston-martin-vantage-gt3",
+  "about": "Pair/brush-double-2007--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "n/a",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "brush/double-2007",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Double brush (sliding contact), 2007-generation",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "Listed on the official 32022 spare-parts tab."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "guide-keel-2007--d132-ferrari-296-gt3",
+  "members": [
+   "PartType/guide/keel-2007",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/guide-keel-2007/d132-ferrari-296-gt3",
+  "about": "Pair/guide-keel-2007--d132-ferrari-296-gt3",
+  "data": {
+   "position": "n/a",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "guide/keel-2007",
+   "carModelSlug": "d132/ferrari-296-gt3",
+   "partTitle": "Guide keel, 2007-generation",
+   "carTitle": "Ferrari 296 GT3",
+   "notes": "Spare kit 20366 on the official 32001 spare-parts tab."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "guide-keel-2007--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/guide/keel-2007",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/guide-keel-2007/d132-aston-martin-vantage-gt3",
+  "about": "Pair/guide-keel-2007--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "n/a",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "guide/keel-2007",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Guide keel, 2007-generation",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "Spare kit 20366 on the official 32022 spare-parts tab."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "decoder-d132-26732--d132-ferrari-296-gt3",
+  "members": [
+   "PartType/decoder/d132-26732",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/decoder-d132-26732/d132-ferrari-296-gt3",
+  "about": "Pair/decoder-d132-26732--d132-ferrari-296-gt3",
+  "data": {
+   "position": "n/a",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "decoder/d132-26732",
+   "carModelSlug": "d132/ferrari-296-gt3",
+   "partTitle": "Digital 132 decoder (26732)",
+   "carTitle": "Ferrari 296 GT3",
+   "notes": "Decoder 26732 on the official 32001 spare-parts tab."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "decoder-d132-26732--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/decoder/d132-26732",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/decoder-d132-26732/d132-aston-martin-vantage-gt3",
+  "about": "Pair/decoder-d132-26732--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "n/a",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "decoder/d132-26732",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Digital 132 decoder (26732)",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "Decoder 26732 on the official 32022 spare-parts tab."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-oem-89800--d132-ferrari-296-gt3",
+  "members": [
+   "PartType/tire/oem-89800",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-oem-89800/d132-ferrari-296-gt3",
+  "about": "Pair/tire-oem-89800--d132-ferrari-296-gt3",
+  "data": {
+   "position": "both",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "tire/oem-89800",
+   "carModelSlug": "d132/ferrari-296-gt3",
+   "partTitle": "Carrera OEM tire set 89800 (GT3-class D132)",
+   "carTitle": "Ferrari 296 GT3",
+   "notes": "Tire part 89800 on the official 32001 spare-parts tab. Caveat: the part's own title enumerates other car numbers, not 32001 \u2014 tab association is the official link."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-oem-89800--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/tire/oem-89800",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-oem-89800/d132-aston-martin-vantage-gt3",
+  "about": "Pair/tire-oem-89800--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "both",
+   "basis": "official-listing",
+   "verified": false,
+   "partTypeSlug": "tire/oem-89800",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Carrera OEM tire set 89800 (GT3-class D132)",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "Tire part 89800 on the official 32022 spare-parts tab. Same title-enumeration caveat."
+  }
+ }
+]

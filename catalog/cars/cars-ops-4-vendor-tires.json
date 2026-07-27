@@ -1,0 +1,329 @@
+[
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/tire/qs-ca02",
+  "data": {
+   "kind": "tire",
+   "title": "Quick Slicks CA02 (1:32 Carrera DTM-class wheels)",
+   "vendor": "quick-slicks",
+   "compound": "silicone",
+   "outerDiaMm": 21.9,
+   "widthMm": 9.65,
+   "specBasis": "Retail-partner product page (CA02XF variant); QS publishes OD + contact-patch width only, never ID.",
+   "notes": "Suffix variants (XF = X-Firm etc.) are compound firmness on one size; the fitment chart lists base numbers. 'Designed specifically for 1:32 Carrera DTM stock wheels.'"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/tire/qs-ca03",
+  "data": {
+   "kind": "tire",
+   "title": "Quick Slicks CA03 (1:32 Carrera DTM-class wheels)",
+   "vendor": "quick-slicks",
+   "compound": "silicone",
+   "outerDiaMm": 22.4,
+   "widthMm": 9.65,
+   "specBasis": "Retail-partner product page (CA03XF variant)."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/tire/qs-ca107",
+  "data": {
+   "kind": "tire",
+   "title": "Quick Slicks CA107 (1:32 Carrera Ferrari 296 rear wheels)",
+   "vendor": "quick-slicks",
+   "compound": "silicone",
+   "outerDiaMm": 22.6,
+   "widthMm": 9.65,
+   "specBasis": "Retail-partner product page (CA107XF variant).",
+   "notes": "'Designed specifically for the 1:32 Carrera Ferrari 296 rear wheels' \u2014 QS cut a dedicated size rather than mapping to the DTM tires (CA02/03), which is evidence the 296 and the Vantage GT3 do NOT share rear wheel sizes."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/tire/pgt-20115lmxd",
+  "data": {
+   "kind": "tire",
+   "title": "Paul Gage PGT-20115LMXD (urethane, 20\u00d711, 5mm rib, XD)",
+   "vendor": "paul-gage",
+   "compound": "urethane",
+   "outerDiaMm": 20.0,
+   "innerDiaMm": 13.0,
+   "widthMm": 11.0,
+   "specBasis": "Dealer Slot Car-Union full dims (OD 20 / ID 13 / W 11 / rib 5 / groove 1.5 mm). CONFLICT preserved in SpecClaims: Slot Car Corner filter tags say 12 mm width vs the size-code's 11 mm.",
+   "notes": "Size code decode (Home Racing World): OD(2)+width(2)+rib(1); LM = larger center opening / low profile, XD = deeper groove for tall center-rib wheels. PGT = Shore 40 firm (XPG = Shore 20 soft variant of the same size). PG tuning tires run deliberately smaller than stock."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/tire/pgt-20125lm",
+  "data": {
+   "kind": "tire",
+   "title": "Paul Gage PGT-20125LM (urethane, 20\u00d712, 5mm rib)",
+   "vendor": "paul-gage",
+   "compound": "urethane",
+   "outerDiaMm": 20.0,
+   "widthMm": 12.0,
+   "specBasis": "Dimensions from the size code (HRW decode); no dealer publishes full dims incl. ID.",
+   "notes": "Paul Gage's own eBay title pairs this size with the SCALEXTRIC Aston Martin GT3; Slot Car Corner tags it for the CARRERA Vantage GT3 \u2014 possibly a cross-brand artifact. See the conflicting Fitment records."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/tire/pgt-20126lmxd",
+  "data": {
+   "kind": "tire",
+   "title": "Paul Gage PGT-20126LMXD (urethane, 20\u00d712, 6mm rib, XD)",
+   "vendor": "paul-gage",
+   "compound": "urethane",
+   "outerDiaMm": 20.0,
+   "widthMm": 12.0,
+   "specBasis": "Dimensions from the size code; no dealer publishes full dims.",
+   "notes": "6 mm rib + XD needs a physically different wheel than 20125LM (5 mm rib) \u2014 at most one of the two conflicting Carrera-Vantage claims is right."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-qs-ca107--d132-ferrari-296-gt3",
+  "members": [
+   "PartType/tire/qs-ca107",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-qs-ca107/d132-ferrari-296-gt3",
+  "about": "Pair/tire-qs-ca107--d132-ferrari-296-gt3",
+  "data": {
+   "position": "rear",
+   "basis": "vendor-chart",
+   "verified": false,
+   "partTypeSlug": "tire/qs-ca107",
+   "carModelSlug": "d132/ferrari-296-gt3",
+   "partTitle": "Quick Slicks CA107 (1:32 Carrera Ferrari 296 rear wheels)",
+   "carTitle": "Ferrari 296 GT3",
+   "notes": "QS chart v4.15 row: \"Carrera | Ferrari 296 | CA107\" (name match, no SKU; chart says \"Ferrari 296\" without GT3 \u2014 Carrera's only 1:32 296 is the GT3, and the product page says designed for its rear wheels). Quick Slicks Fitment Summary v4.15, dated 07/14/2026, distributed as Google Drive PDFs via retail partner Slot Car Corner (quickslicks.com DNS-dead 2026-07-27): by-brand https://drive.google.com/file/d/19VP8NpUA56tI9QnPyjCwA3qjhfbhj5EI/view"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-qs-ca02--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/tire/qs-ca02",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-qs-ca02/d132-aston-martin-vantage-gt3",
+  "about": "Pair/tire-qs-ca02--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "rear",
+   "basis": "vendor-chart",
+   "verified": false,
+   "partTypeSlug": "tire/qs-ca02",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Quick Slicks CA02 (1:32 Carrera DTM-class wheels)",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "QS chart v4.15 row: \"Carrera | Aston Martin Vantage GT3 | CA02, CA03\" (exact name match, no SKU). Quick Slicks Fitment Summary v4.15, dated 07/14/2026, distributed as Google Drive PDFs via retail partner Slot Car Corner (quickslicks.com DNS-dead 2026-07-27): by-brand https://drive.google.com/file/d/19VP8NpUA56tI9QnPyjCwA3qjhfbhj5EI/view"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-qs-ca03--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/tire/qs-ca03",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-qs-ca03/d132-aston-martin-vantage-gt3",
+  "about": "Pair/tire-qs-ca03--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "rear",
+   "basis": "vendor-chart",
+   "verified": false,
+   "partTypeSlug": "tire/qs-ca03",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Quick Slicks CA03 (1:32 Carrera DTM-class wheels)",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "QS chart v4.15 row: \"Carrera | Aston Martin Vantage GT3 | CA02, CA03\". Quick Slicks Fitment Summary v4.15, dated 07/14/2026, distributed as Google Drive PDFs via retail partner Slot Car Corner (quickslicks.com DNS-dead 2026-07-27): by-brand https://drive.google.com/file/d/19VP8NpUA56tI9QnPyjCwA3qjhfbhj5EI/view"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-pgt-20115lmxd--d132-ferrari-296-gt3",
+  "members": [
+   "PartType/tire/pgt-20115lmxd",
+   "CarModel/d132/ferrari-296-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-pgt-20115lmxd/d132-ferrari-296-gt3",
+  "about": "Pair/tire-pgt-20115lmxd--d132-ferrari-296-gt3",
+  "data": {
+   "position": "rear",
+   "basis": "vendor-chart",
+   "verified": false,
+   "partTypeSlug": "tire/pgt-20115lmxd",
+   "carModelSlug": "d132/ferrari-296-gt3",
+   "partTitle": "Paul Gage PGT-20115LMXD (urethane, 20\u00d711, 5mm rib, XD)",
+   "carTitle": "Ferrari 296 GT3",
+   "notes": "Paul Gage's OWN eBay listing 157857297473: '\u2026PGT-20115LMXD fits Carrera Ferrari F296' (via PicClick mirror; the vendor's first-party listing is the strongest vendor-chart-class evidence). Corroborated by Slot Car Corner's Ferrari 296 tag."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-pgt-20125lm--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/tire/pgt-20125lm",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-pgt-20125lm/d132-aston-martin-vantage-gt3",
+  "about": "Pair/tire-pgt-20125lm--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "rear",
+   "basis": "vendor-chart",
+   "verified": false,
+   "partTypeSlug": "tire/pgt-20125lm",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Paul Gage PGT-20125LM (urethane, 20\u00d712, 5mm rib)",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "DISPUTED, dealer-level only: Slot Car Corner tags this for the Carrera Vantage GT3, but Paul Gage's own listing pairs 20125LM with the Scalextric Aston \u2014 possible cross-brand artifact. PG's own store has NO Carrera Aston listing. Conflicts with the 20126LMXD claim (different rib widths \u2014 at most one is right). Owner mounting adjudicates."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "collection",
+  "type": "pair",
+  "name": "tire-pgt-20126lmxd--d132-aston-martin-vantage-gt3",
+  "members": [
+   "PartType/tire/pgt-20126lmxd",
+   "CarModel/d132/aston-martin-vantage-gt3"
+  ]
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "Fitment/tire-pgt-20126lmxd/d132-aston-martin-vantage-gt3",
+  "about": "Pair/tire-pgt-20126lmxd--d132-aston-martin-vantage-gt3",
+  "data": {
+   "position": "rear",
+   "basis": "vendor-chart",
+   "verified": false,
+   "partTypeSlug": "tire/pgt-20126lmxd",
+   "carModelSlug": "d132/aston-martin-vantage-gt3",
+   "partTitle": "Paul Gage PGT-20126LMXD (urethane, 20\u00d712, 6mm rib, XD)",
+   "carTitle": "Aston Martin Vantage GT3",
+   "notes": "DISPUTED, dealer-level only: Amerikids listing title 'PGT-20126LMXD For Carrera Aston Martin Vantage' (page body unfetchable; does not specify GT3 vs older V12 Vantage). Conflicts with the 20125LM claim. Owner mounting adjudicates."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/tire-qs-ca02/scc-product-page",
+  "about": "PartType/tire/qs-ca02",
+  "data": {
+   "sourceUrl": "https://slotcarcorner.com/products/ca02xf-quick-slicks",
+   "sourceKind": "retailer-tech-page",
+   "tireOuterDiaMm": 21.9,
+   "tireWidthMm": 9.65,
+   "position": "rear",
+   "valuesNote": "\"O.D.: .862\\\" (21.90mm)\"; \"Contact Patch Width: .380\\\" (9.65mm)\"; \"designed specifically for 1:32 Carrera DTM stock wheels\".",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "PartType/tire/qs-ca02"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/tire-qs-ca03/scc-product-page",
+  "about": "PartType/tire/qs-ca03",
+  "data": {
+   "sourceUrl": "https://slotcarcorner.com/products/ca03xf-quick-slicks",
+   "sourceKind": "retailer-tech-page",
+   "tireOuterDiaMm": 22.4,
+   "tireWidthMm": 9.65,
+   "position": "rear",
+   "valuesNote": "\"O.D.: .882\\\" (22.40mm)\"; width \".380\\\" (9.65mm)\".",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "PartType/tire/qs-ca03"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/tire-qs-ca107/scc-product-page",
+  "about": "PartType/tire/qs-ca107",
+  "data": {
+   "sourceUrl": "https://slotcarcorner.com/products/ca107xf-quick-slicks-silicone-tires-x-firm",
+   "sourceKind": "retailer-tech-page",
+   "tireOuterDiaMm": 22.6,
+   "tireWidthMm": 9.65,
+   "position": "rear",
+   "valuesNote": "\"Outer Diameter (O.D.): .889\\\" (22.60mm)\"; \"Width (Contact Patch): .380\\\" (9.65mm)\"; \"designed specifically for the 1:32 Carrera Ferrari 296 rear wheels\".",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "PartType/tire/qs-ca107"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/tire-pgt-20115lmxd/slotcar-union-page",
+  "about": "PartType/tire/pgt-20115lmxd",
+  "data": {
+   "sourceUrl": "https://www.slotcar-union.com/en/tires/21402-paul-gage-pgt-20115lmxd-urethane-tires-20x11x5mm-2-pcs.html",
+   "sourceKind": "retailer-tech-page",
+   "tireOuterDiaMm": 20.0,
+   "tireInnerDiaMm": 13.0,
+   "tireWidthMm": 11.0,
+   "position": "rear",
+   "valuesNote": "OD 20 mm, ID 13 mm, width 11 mm, center-rib width 5 mm, rib groove height 1.5 mm \u2014 the only source publishing the ID.",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "PartType/tire/pgt-20115lmxd"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/tire-pgt-20115lmxd/scc-filter-tags",
+  "about": "PartType/tire/pgt-20115lmxd",
+  "data": {
+   "sourceUrl": "https://slotcarcorner.com/products/pgt-20115lmxd-paul-gage-urethane-tires-firm",
+   "sourceKind": "retailer-tech-page",
+   "tireOuterDiaMm": 20.0,
+   "tireWidthMm": 12.0,
+   "position": "rear",
+   "valuesNote": "SCC filter tags: 20mm(OD), 12mm(W), 5mm \u2014 the 12 mm width CONFLICTS with the size-code/Slot Car-Union 11 mm. Preserved unresolved.",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "PartType/tire/pgt-20115lmxd"
+  }
+ }
+]

@@ -1,0 +1,20 @@
+{
+  "arcDeg": {"type": "number?", "description": "Claimed arc angle (pieces)"},
+  "lengthMm": {"type": "number?", "description": "Claimed centerline length (pieces)"},
+  "sourceUrl": {"type": "string", "description": "Where the claim was published"},
+  "archiveUrl": {"type": "string?", "description": "Durable copy (Wayback etc.) when available"},
+  "observedAt": {"type": "string", "description": "ISO-8601 date we read the source (system time, not source publication time)"},
+  "sourceKind": {"type": "string", "description": "official-product-page | official-pdf | retailer-tech-page | community-cad | community-forum | own-measurement | derived-geometrically | vendor-fitment-chart"},
+  "valuesNote": {"type": "string?", "description": "Source wording, derivation method, caveats"},
+  "trackWidthMm": {"type": "number?", "description": "Claimed track profile width (system-wide, recorded on straight/full)"},
+  "pieceTypeSlug": {"type": "string?", "description": "LEGACY denormalization: piece type path, set on all claims about PieceTypes (rows predating the 2026-07 car-layer widening always have it). New claims of any subject also set subjectSlug"},
+  "subjectSlug": {"type": "string?", "description": "Denormalized subject path with family prefix, e.g. PieceType/curve/r2-30, CarModel/d132/ferrari-296-gt3, PartType/tire/pgt-20124"},
+  "slotSpacingMm": {"type": "number?", "description": "Claimed slot-to-slot spacing (system-wide, recorded on straight/full)"},
+  "radiusInnerEdgeMm": {"type": "number?", "description": "Claimed inner-edge radius (marketing pages use rounded edge values)"},
+  "radiusOuterEdgeMm": {"type": "number?", "description": "Claimed outer-edge radius"},
+  "radiusCenterlineMm": {"type": "number?", "description": "Claimed centerline radius"},
+  "tireInnerDiaMm": {"type": "number?", "description": "Claimed tire inner diameter / rim size (cars & tire parts)"},
+  "tireOuterDiaMm": {"type": "number?", "description": "Claimed tire outer diameter"},
+  "tireWidthMm": {"type": "number?", "description": "Claimed tire width"},
+  "position": {"type": "string?", "description": "front | rear | both — which tires the claimed values concern (cars & tire parts)"}
+}

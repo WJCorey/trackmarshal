@@ -1,0 +1,11 @@
+{
+  "kind": {"type": "string", "enum": ["tire", "brush", "guide", "magnet", "decoder", "axle", "gear", "motor"], "description": "Functional part class — mirrors the name segment"},
+  "title": {"type": "string", "description": "Human-readable part name"},
+  "vendor": {"type": "string", "description": "Maker: carrera for OEM, else the third-party vendor slug (paul-gage, quick-slicks, ...). Third-party parts are first-class citizens"},
+  "innerDiaMm": {"type": "number?", "description": "Tires: inner diameter (must match rim). Null for non-tires or ungrounded"},
+  "outerDiaMm": {"type": "number?", "description": "Tires: outer diameter"},
+  "widthMm": {"type": "number?", "description": "Tires: width"},
+  "compound": {"type": "string?", "enum": ["rubber", "silicone", "urethane"], "description": "Tires: material compound. Compound is a fact; which compound is BETTER is taste (DesignBelief), never asserted here"},
+  "specBasis": {"type": "string?", "description": "Rationale for the adjudicated dimensions; per-source evidence lives in SpecClaim assertions about this thing"},
+  "notes": {"type": "string?", "description": "Caveats, vendor sizing-code decoding, known equivalents"}
+}

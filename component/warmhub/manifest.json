@@ -3,7 +3,7 @@
   "component": {
     "id": "com.slotcars.CarreraTrackPersonal",
     "name": "carrera-track-personal",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "shapes": [
     {
@@ -197,6 +197,130 @@
       }
     },
     {
+      "name": "CarHolding",
+      "description": "One physical car in this racer's garage. about = the catalog CarModel (canonical cross-repo wref into slotcars/carrera-catalog, e.g. wh:slotcars/carrera-catalog/CarModel/d132/ferrari-296-gt3). Cars are individuals, not fungible quantities: one CarHolding per physical car (suffix -2, -3 for duplicates of the same model). Garage state (decoder, magnets, current tires) lives here, never on the catalog. Unknown state stays null \u2014 a used car with unknown history is honest data.",
+      "fields": {
+        "nickname": {
+          "type": "string?",
+          "description": "What the household calls this car"
+        },
+        "condition": {
+          "type": "string?",
+          "description": "Free text: new / worn / crashed / bodywork cracked etc."
+        },
+        "decoderInstalled": {
+          "type": "boolean?",
+          "description": "Digital decoder present (null = unknown; relevant for evolution cars converted to digital)"
+        },
+        "magnetsRemoved": {
+          "type": "boolean?",
+          "description": "Downforce magnets taken out (null = unknown)"
+        },
+        "currentTiresSlug": {
+          "type": "string?",
+          "description": "PartType slug of tires currently mounted, e.g. tire/pgt-20124; null = stock/unknown"
+        },
+        "acquiredNotes": {
+          "type": "string?",
+          "description": "Provenance: which product/set this car came from, or used-market origin"
+        },
+        "carModelSlug": {
+          "type": "string",
+          "description": "Denormalized catalog car model path, e.g. d132/ferrari-296-gt3"
+        },
+        "carTitle": {
+          "type": "string",
+          "description": "Denormalized car title"
+        }
+      }
+    },
+    {
+      "name": "PartHolding",
+      "description": "This racer's stock of one spare/upgrade part type, in individual units \u2014 exactly parallel to Holding (which stays piece-only). about = the catalog PartType (canonical cross-repo wref). Quantity changes are revisions. Never auto-decremented by MaintenanceLog \u2014 stock changes always come from the owner saying so.",
+      "fields": {
+        "quantity": {
+          "type": "number",
+          "description": "Units on hand"
+        },
+        "acquiredNotes": {
+          "type": "string?",
+          "description": "Provenance: which products these came from"
+        },
+        "partTypeSlug": {
+          "type": "string",
+          "description": "Denormalized catalog part type path, e.g. brush/double-slider-20365"
+        },
+        "partTitle": {
+          "type": "string",
+          "description": "Denormalized part title"
+        }
+      }
+    },
+    {
+      "name": "MaintenanceLog",
+      "description": "One service action on one car: the consumable evidence stream. about = the CarHolding. Never implies stock decrement (anti-inference) \u2014 revise the PartHolding separately when parts are consumed.",
+      "fields": {
+        "date": {
+          "type": "string",
+          "description": "ISO-8601 date of the service"
+        },
+        "action": {
+          "type": "string",
+          "description": "tires-changed | brushes-changed | decoder-installed | magnet-adjusted | repair | other"
+        },
+        "partTypeSlug": {
+          "type": "string?",
+          "description": "Catalog part type that went on/in, when applicable"
+        },
+        "notes": {
+          "type": "string?",
+          "description": "What happened, symptoms fixed"
+        },
+        "carModelSlug": {
+          "type": "string",
+          "description": "Denormalized car model path for context-free readability"
+        }
+      }
+    },
+    {
+      "name": "LapRecord",
+      "description": "Best-lap evidence for one car on one layout \u2014 the shape that joins cars and tracks. about = Pair (ordered: CarHolding first, Layout second; pair named <carModelSlug>--<layoutSlug> with slashes flattened). Query from either endpoint needs resolveCollections:true. Serves: fastest-car-on-layout, car history across layouts, closest-racing layout (per-car best aggregation), and hard evidence behind DesignBeliefs. Records on retired layouts remain valid history.",
+      "fields": {
+        "bestLapMs": {
+          "type": "number",
+          "description": "Best lap time in milliseconds for this session"
+        },
+        "laps": {
+          "type": "number?",
+          "description": "Laps run in the session"
+        },
+        "driver": {
+          "type": "string",
+          "description": "Who drove"
+        },
+        "date": {
+          "type": "string",
+          "description": "ISO-8601 date of the session"
+        },
+        "controller": {
+          "type": "string?",
+          "description": "Controller used, when it matters (wireless vs wired)"
+        },
+        "notes": {
+          "type": "string?",
+          "description": "Conditions: magnets, tire state, lane"
+        },
+        "carModelSlug": {
+          "type": "string",
+          "description": "Denormalized car model path"
+        },
+        "layoutSlug": {
+          "type": "string",
+          "description": "Denormalized layout name"
+        }
+      }
+    },
+    {
       "name": "DesignBelief",
       "description": "What this racer believes makes a good track, as a soft constraint for the designer skill. about = a Topic. Attributed, revisable; strength is the author's current subjective weight (single-author repo \u2014 no aggregation semantics). If beliefs ever get crowdsourced, promote to binomial propositions with certainty opinions.",
       "fields": {
@@ -259,7 +383,11 @@
         "BuildLog",
         "LayoutFeedback",
         "Topic",
-        "DesignBelief"
+        "DesignBelief",
+        "CarHolding",
+        "PartHolding",
+        "MaintenanceLog",
+        "LapRecord"
       ],
       "things": [
         "Topic/flow",

@@ -1,0 +1,10 @@
+{
+  "quantity": {"type": "number", "description": "Individual units of this content in the box (pieces, cars, or parts — never packs)"},
+  "verified": {"type": "boolean", "description": "false = contents not confirmed against an official source yet; unresolved stays unresolved"},
+  "partNumber": {"type": "string", "description": "Denormalized product part number"},
+  "pieceTitle": {"type": "string?", "description": "LEGACY denormalization for pieceType rows (rows predating 2026-07 car-layer widening always have it). New rows use contentTitle"},
+  "pieceTypeSlug": {"type": "string?", "description": "LEGACY denormalization for pieceType rows — importer/designer consumers filter on this; piece rows keep filling it. New rows also set contentKind/contentSlug"},
+  "contentKind": {"type": "string?", "enum": ["pieceType", "carModel", "partType"], "description": "Which catalog thing family the Pair's second member is. Absent = pieceType (all pre-widening rows)"},
+  "contentSlug": {"type": "string?", "description": "Denormalized content path within its family, e.g. d132/ferrari-296-gt3"},
+  "contentTitle": {"type": "string?", "description": "Denormalized content title for context-free readability"}
+}
