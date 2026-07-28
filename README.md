@@ -4,6 +4,11 @@
 
 The track-planning apps died (Carrera's official planner is discontinued; TrackPower and Ultimate Racer are abandoned). The knowledge shouldn't have. TrackMarshal rebuilds it as open, composable data plus a small amount of exact geometry — so any agent can answer: *"What's the best track I can build with my pieces, in my room, for my kind of racing?"*
 
+<p align="center">
+  <img src="docs/media/skybridge-thunder.svg" alt="Skybridge Thunder — a closure-verified 33-piece Carrera Digital 132 layout with a flying crossover and banked sweepers, rendered to exact geometry by the solver" width="720">
+</p>
+<p align="center"><em>“Skybridge Thunder” — designed by an agent from a real inventory, closure-verified to ±5 mm / 0.5°, rendered at exact geometry. The <a href="designs/">designs/</a> folder has the printable build sheets.</em></p>
+
 ## The stack
 
 | Layer | Where | What |
@@ -17,6 +22,8 @@ The track-planning apps died (Carrera's official planner is discontinued; TrackP
 ## Quickstart
 
 ```bash
+# 0. Sign up at https://app.warmhub.ai — free, GitHub login, no waitlist
+
 # 1. Your personal repo on WarmHub
 wh repo create <you>/my-track --public
 wh component install slotcars/carrera-track-personal --repo <you>/my-track
