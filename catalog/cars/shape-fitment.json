@@ -1,0 +1,10 @@
+{
+  "position": {"type": "string", "enum": ["front", "rear", "both", "n/a"], "description": "Where on the car the part goes; n/a for non-positional parts (decoders, guides)"},
+  "basis": {"type": "string", "enum": ["vendor-chart", "official-listing", "dimensional", "owner-verified"], "description": "Method class of the claim, weakest to strongest evidence family — NEVER a confidence float. dimensional = inferred from matching measurements only (explicitly the weakest class: dimensional match does not guarantee fit)"},
+  "verified": {"type": "boolean", "description": "true = a human physically mounted this part on this car. Vendor charts start false. A false Fitment is a lead, not a fact — skills must surface the basis"},
+  "partTypeSlug": {"type": "string", "description": "Denormalized part type path, e.g. tire/pgt-20124"},
+  "carModelSlug": {"type": "string", "description": "Denormalized car model path, e.g. d132/ferrari-296-gt3"},
+  "partTitle": {"type": "string", "description": "Denormalized part title for context-free readability"},
+  "carTitle": {"type": "string", "description": "Denormalized car title"},
+  "notes": {"type": "string?", "description": "Fit caveats — 'tight on rim', 'requires truing', chart-version cited"}
+}

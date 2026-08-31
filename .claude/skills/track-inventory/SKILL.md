@@ -1,13 +1,13 @@
 ---
 name: track-inventory
-description: Set up or grow a personal Carrera slot-car repo on WarmHub — one conversation turns "here's what I own and where I race" into piece-unit Holdings, a Room, and DesignBeliefs, composed on slotcars/carrera-catalog. Use when the user wants to record their track pieces, sets, or kits, add newly bought products, describe their racing space, or capture track-taste preferences. Also handles the verifier flow when a user's physical box contradicts the catalog.
+description: Set up or grow a personal Carrera slot-car repo on WarmHub — one conversation turns "here's what I own and where I race" into piece-unit Holdings, a garage (cars, spares, maintenance, lap records), a Room, and DesignBeliefs, composed on slotcars/carrera-catalog. Use when the user wants to record their track pieces, sets, kits, or cars, add newly bought products, ask what tires fit their car, log maintenance or race sessions, describe their racing space, or capture track-taste preferences. Also handles the verifier flow when a user's physical box contradicts the catalog.
 ---
 
 # Track Inventory (TrackMarshal on-ramp)
 
 One conversation, three outcomes: **Holdings** (what they own, in piece units), a **Room** (where the track lives), and **DesignBeliefs** (what they think makes a good track). Everything composes on `slotcars/carrera-catalog` by cross-repo assertion — never copy catalog data.
 
-Write contract (ONTOLOGY-REVIEW.md): reads catalog + personal repo, **writes only the personal repo**. May create Holding, Room, DesignBelief, Topic (sparingly), Layout/PieceUsage/BuildLog. May **never** create or edit PieceType, Product, ProductContent, or SpecClaim — catalog discrepancies get *reported*, not patched locally.
+Write contract (ONTOLOGY-REVIEW.md + CARS-DESIGN.md): reads catalog + personal repo, **writes only the personal repo**. May create Holding, Room, DesignBelief, Topic (sparingly), Layout/PieceUsage/BuildLog, and the garage shapes (CarHolding, PartHolding, MaintenanceLog, LapRecord). May **never** create or edit PieceType, Product, ProductContent, SpecClaim, CarModel, PartType, or Fitment — catalog gaps and owner-verified fitments get *reported*, not patched locally.
 
 ## 0. Repo setup
 
@@ -16,7 +16,7 @@ Ask which repo holds their inventory. If none exists:
 ```bash
 wh repo create <them>/my-track --visibility public   # private is fine too; public lets others compose on their layouts
 wh component install slotcars/carrera-track-personal --repo <them>/my-track
-wh component doctor slotcars/carrera-track-personal --repo <them>/my-track   # expect all-ok: 8 shapes + 3 seed Topics
+wh component doctor slotcars/carrera-track-personal --repo <them>/my-track   # expect all-ok: 12 shapes + 3 seed Topics (v0.2.0)
 ```
 
 (MCP: `warmhub_repo_create` + `warmhub_component_install`.) The worked example is `wjcorey/carrera-track`.
@@ -37,9 +37,9 @@ wh thing about Product/<num> --repo slotcars/carrera-catalog --resolve-collectio
 
 (MCP: `warmhub_thing_about` with `resolveCollections: true`.) Rules:
 
-- `verified: false` contents → tell the user, and ask them to sanity-check counts against the physical box if it's handy. Their answer feeds the verifier flow (§4).
-- Contents marked UNRESOLVED in the product notes → **never guess.** Ask the user to enumerate their box; record their enumeration in `acquiredNotes` and report it upstream (§4).
-- Product not in the catalog at all → record nothing for it yet; file a catalog-gap report (§4) with everything the user can tell you (part number, box title, contents). Do not mint a local stand-in.
+- `verified: false` contents → tell the user, and ask them to sanity-check counts against the physical box if it's handy. Their answer feeds the verifier flow (§5).
+- Contents marked UNRESOLVED in the product notes → **never guess.** Ask the user to enumerate their box; record their enumeration in `acquiredNotes` and report it upstream (§5).
+- Product not in the catalog at all → record nothing for it yet; file a catalog-gap report (§5) with everything the user can tell you (part number, box title, contents). Do not mint a local stand-in.
 - Non-track contents (cars, controllers, transformers) get no Holdings unless a PieceType exists for them (precedent: `digital/charging-straight` in the Wireless+ 10109 — geometrically a standard straight, so it counts toward layouts).
 
 ## 2. Write Holdings
@@ -81,7 +81,26 @@ wh assertion create --name kids-forgiving --shape DesignBelief \
 
 `strength` is the user's own 0–1 weight — ask "how strongly?" in plain terms and translate. Create a new Topic only when a belief genuinely fits none of the seeds; reuse beats minting.
 
-## 4. Verifier flow (the flywheel)
+## 4. Garage — cars, spares, maintenance (component ≥0.2.0)
+
+Cars are **individuals, not quantities**: one `CarHolding` per physical car (`-2` suffix for duplicates), about the catalog `CarModel` cross-repo:
+
+```bash
+wh assertion create --name d132-ferrari-296-gt3 --shape CarHolding \
+  --about "wh:slotcars/carrera-catalog/CarModel/d132/ferrari-296-gt3" \
+  --data '{"nickname": "the red one", "acquiredNotes": "from set 30044", "carModelSlug": "d132/ferrari-296-gt3", "carTitle": "Ferrari 296 GT3"}' \
+  --repo <them>/my-track
+```
+
+- Resolve cars the same way as products (§1): part number → `Product` (`productClass: car`) → the `CarModel` it realizes via ProductContent (`contentKind: carModel`); or by name via search. Starter-set cars arrive through box expansion — a set's ProductContent now includes its cars.
+- Garage state is *their* state, never catalog fact: `decoderInstalled`, `magnetsRemoved`, `currentTiresSlug`. **Unknown stays null** — a used car with unknown history is honest data; never default to false.
+- Spares stock → `PartHolding` about the catalog `PartType` (quantity in units, revisions on change — exactly like piece Holdings).
+- Service actions → `MaintenanceLog` about the CarHolding (`date`, `action`, `partTypeSlug?`). **Never auto-decrement PartHolding stock** — ask the owner.
+- Race sessions → `LapRecord` about `Pair(CarHolding, Layout)` (pair named `<carModelSlug>--<layoutSlug>`, slashes flattened): `bestLapMs`, `driver`, `date`. This is the cars×tracks join — offer it whenever they mention "we raced last night."
+
+**Tire question ("what tires fit my car?"):** traverse Fitments from the CarModel (`wh thing about CarModel/<path> --repo slotcars/carrera-catalog --resolve-collections --shape Fitment`). Always surface `basis` and `verified` — a `vendor-chart, verified:false` fitment is a lead, not a fact. When the owner physically mounts a part: that's an **owner-verified fitment observation → report upstream** (§5), the highest-value datum the flywheel produces.
+
+## 5. Verifier flow (the flywheel)
 
 Every new user is a catalog verifier. When their physical box contradicts the catalog (wrong counts, missing pieces, an item the listing doesn't show):
 

@@ -59,6 +59,10 @@ v2 adds: design-time preference conversation (durable answers persist as DesignB
 - Blog post: "The apps died. The knowledge shouldn't have." — abandoned-planner story, open-catalog-as-graph, agent designing a track that actually closes on the living-room floor, photo of the built track.
 - Demo: live — agent reads inventory + room + beliefs, proposes layout, closure-verifies, prints piece list; build it.
 
+## Phase 5 — cars, parts & fitment — BUILT 2026-07-27 (same day as design)
+
+Full dossier + build results: **CARS-DESIGN.md**. Catalog: CarModel/PartType/Fitment shapes live, 73 ops applied (2 CarModels from Corey's 30044 cars, 6 third-party tires with the Paul Gage Vantage dispute preserved as designed, 14 Fitments, 11 SpecClaims); ProductContent/SpecClaim/Product widened legacy-safe. Component v0.2.0 (CarHolding/PartHolding/MaintenanceLog/LapRecord) registered, verified, reconcile-installed onto `wjcorey/carrera-track`; garage flow in `track-inventory` §4. Gate-5 cold-reader eval passed 3/3. Remaining: magnets PartTypes, LapRecord-aware designer objectives (step 5), and the standing pipeline dependency — **car liveries churn yearly, so the update pipeline is now the most urgent unbuilt piece**.
+
 ## Open questions
 
 - **OQ-1 · Names.** Public WarmHub org: `slotcars` (Corey's call; confirmed available 2026-07-16; broad enough to host other track systems later). Repo: `slotcars/carrera-catalog`. "TrackMarshal" stays the project codename — full collision check still pending if used publicly.

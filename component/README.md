@@ -1,8 +1,8 @@
 # carrera-track-personal — installable WarmHub component
 
-The "build your own personal track repo" component (Greenhouse deliverable 3). Ships the 8 personal-repo shapes (Holding, Room, Layout, PieceUsage, BuildLog, LayoutFeedback, Topic, DesignBelief) + 3 seed Topics (flow, kid-friendly, overtaking).
+The "build your own personal track repo" component (Greenhouse deliverable 3). Ships the 12 personal-repo shapes — track side: Holding, Room, Layout, PieceUsage, BuildLog, LayoutFeedback, Topic, DesignBelief; garage side (v0.2.0, per docs/CARS-DESIGN.md): CarHolding, PartHolding, MaintenanceLog, LapRecord — plus 3 seed Topics (flow, kid-friendly, overtaking).
 
-**Registered and live: `slotcars/carrera-track-personal` (public, v0.1.0).** Lifecycle verified 2026-07-22 on a scratch repo: `wh component validate` → Valid, install → ready, doctor → all 13 checks ok (8 shapes, 3 seeds, install record, version), teardown → released all 8 shapes cleanly. Registry metadata points at this GitHub repo as source.
+**Registered and live: `slotcars/carrera-track-personal` (public, v0.2.0).** v0.1.0 lifecycle verified 2026-07-22 on a scratch repo (validate → install → doctor 13/13 ok → teardown clean); v0.2.0 verified 2026-07-27 (fresh install → doctor 17/17 ok; reconcile-install onto the pre-component `wjcorey/carrera-track` added the 4 garage shapes without touching existing data). Registry metadata points at this GitHub repo as source.
 
 Re-publishing a new version (additive-only — the component has consumers once anyone installs it):
 

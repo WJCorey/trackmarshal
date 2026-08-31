@@ -288,7 +288,7 @@ SPEC_CLAIMS = [
      {"sourceUrl": "https://www.slottrackpro.com/carrera-track/", "sourceKind": "retailer-tech-page", "lengthMm": 86,
       "valuesNote": "Retail listings round to 86 mm / 3.38 in"}),
     ("straight/quarter", "derived-quarter",
-     {"sourceUrl": "https://github.com/wjcorey (TrackMarshal solver)", "sourceKind": "derived-geometrically", "lengthMm": 86.25,
+     {"sourceUrl": "https://github.com/WJCorey/trackmarshal", "sourceKind": "derived-geometrically", "lengthMm": 86.25,
       "valuesNote": "345/4 = 86.25 exactly; 1/3 straight is exactly 345/3=115, so quarter is presumed exact too"}),
     ("curve/r1-60", "carreraslots-20571",
      {"sourceUrl": CS + "20571.html", "sourceKind": "official-product-page",

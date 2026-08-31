@@ -1,0 +1,16 @@
+{
+  "title": {"type": "string", "description": "Human-readable car name, e.g. Ferrari 296 GT3"},
+  "system": {"type": "string", "enum": ["d132", "d124", "evolution"], "description": "Carrera product system — mirrors the name segment. The d132 and evolution versions of 'the same car' are DIFFERENT CarModels (different chassis/electronics)"},
+  "scale": {"type": "string", "enum": ["1:32", "1:24"], "description": "Physical scale. Do not infer from system"},
+  "digital": {"type": "boolean", "description": "Ships with a digital decoder (per the model as shipped; conversions are garage state in personal repos, not catalog facts)"},
+  "lights": {"type": "boolean", "description": "Ships with working lights. Do not infer from digital"},
+  "tireFrontInnerDiaMm": {"type": "number?", "description": "Adjudicated front tire inner diameter (rim). Null = ungrounded, not unknown-to-the-world"},
+  "tireFrontOuterDiaMm": {"type": "number?", "description": "Adjudicated front tire outer diameter"},
+  "tireFrontWidthMm": {"type": "number?", "description": "Adjudicated front tire width"},
+  "tireRearInnerDiaMm": {"type": "number?", "description": "Adjudicated rear tire inner diameter (rim)"},
+  "tireRearOuterDiaMm": {"type": "number?", "description": "Adjudicated rear tire outer diameter"},
+  "tireRearWidthMm": {"type": "number?", "description": "Adjudicated rear tire width"},
+  "oemTireSparePart": {"type": "string?", "description": "Carrera spare-tire part number for this car, when published"},
+  "fitmentBasis": {"type": "string?", "description": "Rationale for the adjudicated tire/fitment values; per-source evidence lives in SpecClaim assertions about this thing"},
+  "notes": {"type": "string?", "description": "Quirks: magnet arrangement, known chassis siblings (pending a platform grain), set-exclusivity"}
+}

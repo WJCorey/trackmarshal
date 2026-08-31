@@ -1,0 +1,168 @@
+[
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "CarModel/d132/ferrari-296-gt3",
+  "data": {
+   "title": "Ferrari 296 GT3",
+   "system": "d132",
+   "scale": "1:32",
+   "digital": true,
+   "lights": true,
+   "oemTireSparePart": "89800",
+   "fitmentBasis": "Digital/lights/scale from official EU+US product pages of the realizing SKU 32001 (see SpecClaims). Tire DIMENSIONS ungrounded: official pages publish none; OEM spare tire part 89800 associated via the official spare-parts tab.",
+   "notes": "Liveries are Products (32001 'AF Corse, No.21'; spare-part cross-references suggest 32000 is another livery of this model \u2014 not asserted without a source). Axle spare 20091294 shared with 20027761/20027762/20032000/20032001 \u2014 platform-grain evidence, recorded not modeled (CARS-DESIGN promotion trigger). Pacecar/Safetycar function; length 14.8 cm (US page '5.81 in')."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "CarModel/d132/aston-martin-vantage-gt3",
+  "data": {
+   "title": "Aston Martin Vantage GT3",
+   "system": "d132",
+   "scale": "1:32",
+   "digital": true,
+   "lights": true,
+   "oemTireSparePart": "89800",
+   "fitmentBasis": "Digital/lights/scale from official EU+US product pages of the realizing SKU 32022 (see SpecClaims). Tire DIMENSIONS ungrounded: official pages publish none; OEM spare tire part 89800 associated via the official spare-parts tab.",
+   "notes": "Livery Product 32022 'Northwest, No.98'. Axle spare 20091087 shared with 20027631/20027969/20027743/20027783/20027784/20032022/20032023 \u2014 a DIFFERENT axle group than the 296 GT3 (evidence the two cars are not one platform). Pacecar/Safetycar function; length 14.7 cm."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/brush/double-2007",
+  "data": {
+   "kind": "brush",
+   "title": "Double brush (sliding contact), 2007-generation",
+   "vendor": "carrera",
+   "specBasis": "Official product page of the 10-pack (Product 20365).",
+   "notes": "The universal contact brush: official page states compatibility with DIGITAL 124, DIGITAL 132, EVOLUTION (from 2007) and Exclusiv from 2006 \u2014 the high-fanout fitment case (CARS-DESIGN OQ-C3): system-wide compatibility recorded here; per-car Fitments asserted only for cars whose official spare-parts tabs list it."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/guide/keel-2007",
+  "data": {
+   "kind": "guide",
+   "title": "Guide keel, 2007-generation",
+   "vendor": "carrera",
+   "specBasis": "Official product page of spare kit 20366 ('2 guide keels incl. 8 double brushes, from 2007')."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/decoder/d132-26732",
+  "data": {
+   "kind": "decoder",
+   "title": "Digital 132 decoder (26732)",
+   "vendor": "carrera",
+   "specBasis": "Official product page 20026732; listed as the decoder spare on both 32001 and 32022 official spare-parts tabs.",
+   "notes": "Current-generation D132 car decoder / Evolution retrofit. Other decoders exist for specific cars (20026750 for 20030943; 20026751 for 20031054/55) \u2014 not modeled until a question needs them."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "PartType/tire/oem-89800",
+  "data": {
+   "kind": "tire",
+   "title": "Carrera OEM tire set 89800 (GT3-class D132)",
+   "vendor": "carrera",
+   "compound": "rubber",
+   "specBasis": "Identity from the spare pack (Product 89800) \u2014 the only official handle. NO published dimensions anywhere official; compound rubber per Carrera's standard OEM tires (US 32001 page: 'Double contact brushes', tires unspecified).",
+   "notes": "Pack title enumerates cars 27438...30662 but NOT 32001/32022; the official association to our two cars is each car's spare-parts tab. Recorded as a productive tension, not resolved by guessing."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "Product/32001",
+  "data": {
+   "partNumber": "32001",
+   "skuAliases": [
+    "20032001"
+   ],
+   "title": "Ferrari 296 GT3 \"AF Corse, No.21\" \u2014 Digital 132 car",
+   "productClass": "car",
+   "status": "current",
+   "notes": "Working front/rear/brake lights; pacecar+safetycar function; official Ferrari license. Also sold inside starter set 30044. Official spare parts: brushes 20365, keels+brushes 20366, decoder 26732, tires 89800, motor E200 20089200, bits 20091262, axles 20091294."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "Product/32022",
+  "data": {
+   "partNumber": "32022",
+   "skuAliases": [
+    "20032022"
+   ],
+   "title": "Aston Martin Vantage GT3 \"Northwest, No.98\" \u2014 Digital 132 car",
+   "productClass": "car",
+   "status": "current",
+   "notes": "Working front/rear/brake lights; pacecar+safetycar function; official Aston Martin license. Also sold inside starter set 30044. Official spare parts: brushes 20365, keels+brushes 20366, decoder 26732, tires 89800, motor E200 20089200, bits 20091280, axles 20091087."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "Product/20365",
+  "data": {
+   "partNumber": "20365",
+   "skuAliases": [
+    "20020365"
+   ],
+   "title": "Double Brushes, 10 pcs, from 2007",
+   "productClass": "spare-part",
+   "status": "current",
+   "notes": "Fits DIGITAL 124, DIGITAL 132, EVOLUTION (from 2007), Exclusiv from 2006 (official page)."
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "Product/20366",
+  "data": {
+   "partNumber": "20366",
+   "skuAliases": [
+    "20020366"
+   ],
+   "title": "2 guide keels incl. 8 double brushes, from 2007",
+   "productClass": "spare-part",
+   "status": "current"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "Product/26732",
+  "data": {
+   "partNumber": "26732",
+   "skuAliases": [
+    "20026732"
+   ],
+   "title": "Digital decoder (D132 cars / Evolution retrofit)",
+   "productClass": "spare-part",
+   "status": "current"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "thing",
+  "name": "Product/89800",
+  "data": {
+   "partNumber": "89800",
+   "skuAliases": [
+    "20089800"
+   ],
+   "title": "Tires for 27438...30662 (GT3-class D132 tire set)",
+   "productClass": "spare-part",
+   "status": "current",
+   "notes": "UNRESOLVED CONTENTS: tire count per pack not published. Title enumerates specific car numbers; ALSO the official spare-tire part for 32001/32022 via their spare-parts tabs. \u20ac4.99 (EU, 2026-07)."
+  }
+ }
+]

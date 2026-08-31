@@ -1,0 +1,80 @@
+[
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/d132-ferrari-296-gt3/official-eu-page",
+  "about": "CarModel/d132/ferrari-296-gt3",
+  "data": {
+   "sourceUrl": "https://www.carrera-toys.com/en/products/20032001-ferrari-296-gt3-af-corse-no-21",
+   "sourceKind": "official-product-page",
+   "valuesNote": "DIGITAL 132 category; \"Front, rear, and brake lights\"; scale 1:32; spare-parts tab: brushes 20020365, keels 20020366, decoder 20026732, tires 20089800, axles 20091294, motor E200 20089200. No tire dimensions published.",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "CarModel/d132/ferrari-296-gt3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/d132-ferrari-296-gt3/official-us-page",
+  "about": "CarModel/d132/ferrari-296-gt3",
+  "data": {
+   "sourceUrl": "https://carrera-revell-toys.com/carrera/product/20032001-ferrari-296-gt3-af-corse-no-21",
+   "sourceKind": "official-product-page",
+   "valuesNote": "\"Carrera Digital 132 1:32 scale digital slot car\"; \"Working front and rear lights\"; \"Light function 1 = Front and rear/brake light\"; \"Vehicle function = Pacecar and Safetycar function\"; length 5.81 in; \"Double contact brushes for maximum track contact\". No tire dimensions published.",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "CarModel/d132/ferrari-296-gt3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/d132-aston-martin-vantage-gt3/official-eu-page",
+  "about": "CarModel/d132/aston-martin-vantage-gt3",
+  "data": {
+   "sourceUrl": "https://www.carrera-toys.com/en/products/20032022-aston-martin-vantage-gt3-northwest-no-98",
+   "sourceKind": "official-product-page",
+   "valuesNote": "DIGITAL 132 category; \"Front, rear, and brake lights\"; scale 1:32; spare-parts tab: brushes 20020365, keels 20020366, decoder 20026732, tires 20089800, axles 20091087. No tire dimensions published.",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "CarModel/d132/aston-martin-vantage-gt3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/d132-aston-martin-vantage-gt3/official-us-page",
+  "about": "CarModel/d132/aston-martin-vantage-gt3",
+  "data": {
+   "sourceUrl": "https://carrera-revell-toys.com/carrera/product/20032022-aston-martin-vantage-gt3-northwest-no-98",
+   "sourceKind": "official-product-page",
+   "valuesNote": "\"Carrera Digital 132 1:32 scale digital slot car\"; \"Working front and rear lights\"; \"Vehicle function = Pacecar and Safetycar function\"; length 14.7 cm. No tire dimensions published.",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "CarModel/d132/aston-martin-vantage-gt3"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/brush-double-2007/official-eu-page",
+  "about": "PartType/brush/double-2007",
+  "data": {
+   "sourceUrl": "https://www.carrera-toys.com/en/products/20020365-double-brushes-10-pcs-from-2007",
+   "sourceKind": "official-product-page",
+   "valuesNote": "\"Double Brushes, 10 pcs, from 2007\" \u2014 \"the contact point between slot car and track\"; compatible with \"DIGITAL 124, DIGITAL 132, EVOLUTION (from 2007)\" and Exclusiv vehicles from 2006.",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "PartType/brush/double-2007"
+  }
+ },
+ {
+  "operation": "add",
+  "kind": "assertion",
+  "name": "SpecClaim/30044/official-us-set-page",
+  "about": "Product/30044",
+  "data": {
+   "sourceUrl": "https://carrera-revell-toys.com/carrera/product/20030044-24h-speed",
+   "sourceKind": "official-product-page",
+   "valuesNote": "Set productContents JSON lists SKU 20032001 (Ferrari 296 GT3 \"AF Corse, No.21\") and SKU 20032022 (Aston-Martin Vantage GT3 \"Northwest, No.98\") \u2014 official confirmation the set cars ARE retail 32001/32022. \"Car scale: 1:32\", \"Track scale: 1:24\", \"Track length: 26.25-ft.\", \"Race up to 6 cars at once\".",
+   "observedAt": "2026-07-27",
+   "subjectSlug": "Product/30044"
+  }
+ }
+]
