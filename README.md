@@ -21,8 +21,12 @@ The track-planning apps died (Carrera's official planner is discontinued; TrackP
 
 ## Quickstart
 
+TrackMarshal's data lives on [WarmHub](https://app.warmhub.ai), an open knowledge-graph platform built for agents — the catalog is a public repo there, and your inventory becomes your own repo composed on top of it. New to WarmHub? Start with its [get-started guide](https://docs.warmhub.ai/get-started/): sign up at [app.warmhub.ai](https://app.warmhub.ai) (free, GitHub login, no waitlist — or hand the guide's sign-up prompt to your agent and let it walk you through), then:
+
 ```bash
-# 0. Sign up at https://app.warmhub.ai — free, GitHub login, no waitlist
+# 0. Install the WarmHub CLI (Node 22+) and log in
+npm install -g @warmhub/cli
+wh auth login
 
 # 1. Your personal repo on WarmHub
 wh repo create <you>/my-track --public
@@ -35,7 +39,7 @@ wh component install slotcars/carrera-track-personal --repo <you>/my-track
 python3 solver/designer.py --inventory inv.json --room-w 4000 --room-l 3000
 ```
 
-Or point an MCP-connected agent at the catalog and this repo's skills — that's the intended interface.
+Or skip the CLI entirely: connect an MCP-capable agent (Claude Code, Claude Desktop, Cursor, Codex, …) to WarmHub at `https://mcp.warmhub.ai/mcp`, point it at the catalog and this repo's [skills](.claude/skills/), and talk to it — that's the intended interface.
 
 ## Geometry you can trust
 

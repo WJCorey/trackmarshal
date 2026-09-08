@@ -12,6 +12,8 @@ wh component registry update slotcars/carrera-track-personal --manifest ./compon
 
 ## How anyone then sets up their repo
 
+Prerequisite: a WarmHub account and the `wh` CLI — see [WarmHub's get-started guide](https://docs.warmhub.ai/get-started/) (`npm install -g @warmhub/cli`, then `wh auth login`), or the [main README quickstart](../README.md#quickstart).
+
 ```bash
 wh repo create <you>/my-track --public
 wh component install slotcars/carrera-track-personal --repo <you>/my-track
